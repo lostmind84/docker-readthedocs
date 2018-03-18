@@ -1,6 +1,5 @@
-FROM ubuntu:latest
-MAINTAINER Florian "floross" Rossiaud <o>
-MAINTAINER Simon "svvac" Wachter <himself@swordofpain.net>
+FROM ubuntu:16.04
+MAINTAINER Fabien Frick
 
 ENV DEBIAN_FRONTEND=noninteractive \
     APPDIR=/app \
@@ -18,9 +17,10 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 
 # Set locale to UTF-8
-RUN locale-gen en_US.UTF-8 && \
-    update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 && \
-    locale-gen fr_FR.UTF-8
+RUN apt-get clean && apt-get update && apt-get install -y locales && \
+    locale-gen en_US.UTF-8 && \
+    locale-gen fr_FR.UTF-8 && \
+    update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
 # Update python
 RUN apt-get -qq update && \
