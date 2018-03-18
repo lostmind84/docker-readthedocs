@@ -26,7 +26,7 @@ Simply launch a `docker run` with relevant params.
         -e RTD_ALLOW_PRIVATE_REPOS=true \
         -p 8000:80 \
         -d \
-        floross/docker-readthedocs
+        dakeyras84/docker-readthedocs
 
 ### Compose
 
@@ -135,6 +135,7 @@ tasks. It will also set the following flags on `config.py`:
 
 
 ______
+*Credits to [floross/docker-readthedocs](https://github.com/floross/docker-readthedocs)*
 
 *Credits to [moul/docker-readthedocs](https://github.com/moul/docker-readthedocs)*
 
